@@ -1,5 +1,5 @@
 const addDateSuff = date => {let dateString = date.toString();
-    const endChar = dateString.charAt(dateString,length - 1);
+    const endChar = dateString.charAt(dateString.length - 1);
 
     if (endChar === '1' && dateString !== '11'){dateString = `${dateString}st`;}
     else if(endChar === '2' && dateString !== '12'){dateString = `${dateString}nd`;}

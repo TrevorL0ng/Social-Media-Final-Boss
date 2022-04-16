@@ -8,7 +8,7 @@ const userController = {
         User.create(body).then(userData => res.json(userData)).catch(err =>{console.log(err);});
     },
     getUserID({params}, res){
-        User.findOne({_id: params._id}).then(userData => res.json(userData)).catch(err =>{console.log(err);});
+        User.findOne({_id: params.id}).then(userData => res.json(userData)).catch(err =>{console.log(err);});
     },
     updateUser({params, body}, res){
         User.findOneAndUpdate({_id: params.id}, body, {new:true, runValidators: true}).then(userData =>{
