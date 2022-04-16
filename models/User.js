@@ -1,7 +1,7 @@
 // Pulling in mongoose
 const {Schema, model, Types} = require('mongoose');
 
-const User = new Schema({
+const UserSchema = new Schema({
     username: {
         type: String,
         unique: true,
@@ -23,3 +23,8 @@ const User = new Schema({
         virtuals:true
     }
     });
+
+    UserSchema.virtual('friendCount').get(function(){ return this.friends.length;})
+
+    const User = model('User', UserSchema);
+    module.exports = User;
